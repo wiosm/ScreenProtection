@@ -4,6 +4,7 @@ import UIKit
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     private let navigationController = UINavigationController()
+    private let captureProtector = SecureWindowCaptureProtector()
 
     func scene(
         _ scene: UIScene,
@@ -15,6 +16,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         showLogin()
         window.rootViewController = navigationController
+        captureProtector.apply(to: window)
         window.makeKeyAndVisible()
         self.window = window
     }
