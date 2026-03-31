@@ -10,3 +10,10 @@ A minimal iOS 14+ project using **UIKit navigation** with **SwiftUI screens** vi
    - Password text field
    - Confirm button
 3. Tapping Confirm pushes a SwiftUI success screen using UIKit navigation.
+
+## Recording protection behavior
+
+The login screen is wrapped in a secure container powered by a secure text-entry canvas.
+This keeps login content protected in captured output without observing recording notifications
+and without interrupting user interaction.
+

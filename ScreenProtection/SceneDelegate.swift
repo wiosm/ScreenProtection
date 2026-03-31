@@ -26,7 +26,10 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let hostingController = UIHostingViewController(rootView: loginView)
         hostingController.title = "Login"
-        navigationController.setViewControllers([hostingController], animated: false)
+
+        let secureController = SecureContainerViewController(contentViewController: hostingController)
+        secureController.title = hostingController.title
+        navigationController.setViewControllers([secureController], animated: false)
     }
 
     private func showSuccess() {

@@ -13,6 +13,7 @@
 		A00000000000000000000004 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000014 /* SuccessView.swift */; };
 		A00000000000000000000005 /* UIHostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000015 /* UIHostingViewController.swift */; };
 		A00000000000000000000006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000016 /* Assets.xcassets */; };
+		A00000000000000000000007 /* SecureContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000018 /* SecureContainerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A00000000000000000000015 /* UIHostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHostingViewController.swift; sourceTree = "<group>"; };
 		A00000000000000000000016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A00000000000000000000017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A00000000000000000000018 /* SecureContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureContainerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 				A00000000000000000000011 /* AppDelegate.swift */,
 				A00000000000000000000012 /* SceneDelegate.swift */,
 				A00000000000000000000015 /* UIHostingViewController.swift */,
+				A00000000000000000000018 /* SecureContainerViewController.swift */,
 				A00000000000000000000013 /* LoginView.swift */,
 				A00000000000000000000014 /* SuccessView.swift */,
 				A00000000000000000000016 /* Assets.xcassets */,
@@ -138,6 +141,7 @@
 				A00000000000000000000001 /* AppDelegate.swift in Sources */,
 				A00000000000000000000002 /* SceneDelegate.swift in Sources */,
 				A00000000000000000000005 /* UIHostingViewController.swift in Sources */,
+				A00000000000000000000007 /* SecureContainerViewController.swift in Sources */,
 				A00000000000000000000003 /* LoginView.swift in Sources */,
 				A00000000000000000000004 /* SuccessView.swift in Sources */,
 			);

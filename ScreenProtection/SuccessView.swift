@@ -3,6 +3,7 @@ import SwiftUI
 struct SuccessView: View {
     var body: some View {
         VStack(spacing: 16) {
+
             if #available(iOS 15.0, *) {
                 Image(systemName: "checkmark.circle.fill")
                     .font(.system(size: 72))
