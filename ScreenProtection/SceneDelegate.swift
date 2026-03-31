@@ -16,19 +16,12 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         window.backgroundColor = .systemBackground
 
-        let navigationController = UINavigationController(rootViewController: makeLoginViewController())
-        window.rootViewController = navigationController
-        window.makeKeyAndVisible()
-
-        self.window = window
-    }
-
-    private func makeLoginViewController() -> UIViewController {
         showLogin()
         window.rootViewController = navigationController
-        captureProtector.apply(to: window)
         window.makeKeyAndVisible()
+
         self.window = window
+        captureProtector.apply(to: window)
     }
 
     private func showLogin() {
@@ -38,24 +31,16 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let hostingController = UIHostingViewController(rootView: loginView)
         hostingController.title = "Login"
-        return hostingController
-    }
-
-    private func showSuccess() {
-        guard let navigationController = window?.rootViewController as? UINavigationController else {
-            return
-        }
-
-
-        let secureController = SecureContainerViewController(contentViewController: hostingController)
-        secureController.title = hostingController.title
-        navigationController.setViewControllers([secureController], animated: false)
+        navigationController.setViewControllers([hostingController], animated: false)
     }
 
     private func showSuccess() {
         let successView = SuccessView()
         let hostingController = UIHostingViewController(rootView: successView)
         hostingController.title = "Success"
-        navigationController.pushViewController(hostingController, animated: true)
+
+        let secureController = SecureContainerViewController(contentViewController: hostingController)
+        secureController.title = hostingController.title
+        navigationController.pushViewController(secureController, animated: true)
     }
 }
