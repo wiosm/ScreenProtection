@@ -3,7 +3,6 @@ import UIKit
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-    private let navigationController = UINavigationController()
 
     func scene(
         _ scene: UIScene,
@@ -13,23 +12,30 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
 
         let window = UIWindow(windowScene: windowScene)
-        showLogin()
+        window.backgroundColor = .systemBackground
+
+        let navigationController = UINavigationController(rootViewController: makeLoginViewController())
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+
         self.window = window
     }
 
-    private func showLogin() {
+    private func makeLoginViewController() -> UIViewController {
         let loginView = LoginView { [weak self] in
             self?.showSuccess()
         }
 
         let hostingController = UIHostingViewController(rootView: loginView)
         hostingController.title = "Login"
-        navigationController.setViewControllers([hostingController], animated: false)
+        return hostingController
     }
 
     private func showSuccess() {
+        guard let navigationController = window?.rootViewController as? UINavigationController else {
+            return
+        }
+
         let successView = SuccessView()
         let hostingController = UIHostingViewController(rootView: successView)
         hostingController.title = "Success"
