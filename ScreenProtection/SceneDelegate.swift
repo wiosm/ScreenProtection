@@ -3,6 +3,8 @@ import UIKit
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
+    private let navigationController = UINavigationController()
+    private let captureProtector = SecureWindowCaptureProtector()
 
     func scene(
         _ scene: UIScene,
@@ -22,6 +24,14 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     private func makeLoginViewController() -> UIViewController {
+        showLogin()
+        window.rootViewController = navigationController
+        captureProtector.apply(to: window)
+        window.makeKeyAndVisible()
+        self.window = window
+    }
+
+    private func showLogin() {
         let loginView = LoginView { [weak self] in
             self?.showSuccess()
         }
@@ -36,6 +46,13 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
 
+
+        let secureController = SecureContainerViewController(contentViewController: hostingController)
+        secureController.title = hostingController.title
+        navigationController.setViewControllers([secureController], animated: false)
+    }
+
+    private func showSuccess() {
         let successView = SuccessView()
         let hostingController = UIHostingViewController(rootView: successView)
         hostingController.title = "Success"
