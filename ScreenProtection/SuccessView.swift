@@ -3,9 +3,14 @@ import SwiftUI
 struct SuccessView: View {
     var body: some View {
         VStack(spacing: 16) {
-            Image(systemName: "checkmark.circle.fill")
-                .font(.system(size: 72))
-                .foregroundStyle(.green)
+
+            if #available(iOS 15.0, *) {
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.system(size: 72))
+                    .foregroundStyle(.green)
+            } else {
+                // Fallback on earlier versions
+            }
 
             Text("Login Successful")
                 .font(.title)

@@ -16,3 +16,4 @@ A minimal iOS 14+ project using **UIKit navigation** with **SwiftUI screens** vi
 The login screen is wrapped in a secure container powered by a secure text-entry canvas.
 This keeps login content protected in captured output without observing recording notifications
 and without interrupting user interaction.
+
