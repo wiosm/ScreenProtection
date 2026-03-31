@@ -14,6 +14,16 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
 
         let window = UIWindow(windowScene: windowScene)
+        window.backgroundColor = .systemBackground
+
+        let navigationController = UINavigationController(rootViewController: makeLoginViewController())
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+
+        self.window = window
+    }
+
+    private func makeLoginViewController() -> UIViewController {
         showLogin()
         window.rootViewController = navigationController
         captureProtector.apply(to: window)
@@ -28,6 +38,14 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let hostingController = UIHostingViewController(rootView: loginView)
         hostingController.title = "Login"
+        return hostingController
+    }
+
+    private func showSuccess() {
+        guard let navigationController = window?.rootViewController as? UINavigationController else {
+            return
+        }
+
 
         let secureController = SecureContainerViewController(contentViewController: hostingController)
         secureController.title = hostingController.title

@@ -11,6 +11,10 @@ A minimal iOS 14+ project using **UIKit navigation** with **SwiftUI screens** vi
    - Confirm button
 3. Tapping Confirm pushes a SwiftUI success screen using UIKit navigation.
 
+## Notes
+
+- Navigation ownership remains in UIKit (`UINavigationController`).
+- SwiftUI screens are hosted via a custom `UIHostingViewController`.
 ## Recording protection behavior
 
 The login screen is wrapped in a secure container powered by a secure text-entry canvas.
